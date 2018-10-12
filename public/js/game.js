@@ -1,63 +1,12 @@
-
-/**
- * Simple tic-tac-toe game starter. 
- */
-const game = (function () {
-
-  const cellElements = [
-    document.getElementById('upper-left'),
-    document.getElementById('upper-mid'),
-    document.getElementById('upper-right'),
-    document.getElementById('center-left'),
-    document.getElementById('center-mid'),
-    document.getElementById('center-right'),
-    document.getElementById('lower-left'),
-    document.getElementById('lower-mid'),
-    document.getElementById('lower-right')
-  ];
-
-  for (let i = 0; i < cellElements.length; i++) {
-    cellElements[i].addEventListener('click', async function () {
-
-      // add player's X
-      const isValidMove = await addX(cellElements[i]);
-
-      if (isValidMove) {
-
-        // choose computer's O
-        const j = await findBestMove(cellElements);
-
-        // pause, then add computer's O
-        await new Promise((resolve) => setTimeout(() => resolve(), 2000));
-        await addO(cellElements[j]);
-      }
-
-    });
-  }
-
-  async function findBestMove(arr) {
-    for (let n = 0; n < arr.length; n++) {
-      if (arr[n].childElementCount === 0) {
-        return n;
-      }
-    }
-  }
-
-  async function addX(cellElement) {
-    if (cellElement.childElementCount === 1) { return false; }
-    const headingElement = document.createElement("h1");
-    const textNode = document.createTextNode("X");
-    headingElement.appendChild(textNode);
-    cellElement.appendChild(headingElement);
-    return true;
-  }
-
-  async function addO(cellElement) {
-    if (cellElement.childElementCount === 1) { return; }
-    const headingElement = document.createElement("h1");
-    const textNode = document.createTextNode("O");
-    headingElement.appendChild(textNode);
-    cellElement.appendChild(headingElement);
-  }
-
-})();
+function show()
+{
+    let side1;
+    let side2;
+    let side3;
+    side1=Number(document.getElementById("side1").value);
+    side2=Number(document.getElementById("side2").value);
+    side3=Number(document.getElementById("side3").value);
+    var perimeter = (side1 + side2 + side3)/2;
+    var area =  Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3)));
+    alert(area);
+}

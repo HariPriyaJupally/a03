@@ -45,7 +45,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // 4 http GET default page at /
-app.get('/', function (req, res) {
+app.get('/index', function (req, res) {
   //res.sendFile(path.join(__dirname + '/assets/index.html'))
   res.render('index.ejs')
 })
@@ -56,8 +56,8 @@ app.get('/tic-tac-toe', function (req, res) {
 })
 
 // 4 http GET /about
-app.get('/about', function (req, res) {
-  res.render('about.ejs')
+app.get('/index', function (req, res) {
+  res.render('index.ejs')
 })
 
 // 4 http GET /contact
@@ -112,9 +112,4 @@ app.get(function (req, res) {
   res.render('404')
 })
 
-// Listen for an application request on designated port
-app.listen(port, function () {
-  console.log('\nWeb app started and listening on http://localhost:' + port + '.')
-  console.log('\nLogs will be sent to this terminal and ' + logfile + '.')
-  console.log('\nKeep this open while serving, and use CTRL-C to quit.')
-})
+
