@@ -40,7 +40,7 @@ app.use(logger('combined', { stream: accessLogStream }))
 if (process.env.NODE_ENV === 'production') {
     app.get('*', function (req, res, next) {
     if (req.headers['x-forwarded-proto'] != 'https') {
-      res.redirect('https://resumesite563.herokuapp.com/' + req.url)
+      res.redirect('https://rocky-escarpment-96604.herokuapp.com/' + req.url)
     } else { next() }
   })
 }
