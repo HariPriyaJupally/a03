@@ -19,7 +19,7 @@ const mg = require('nodemailer-mailgun-transport')
 // 5 handle valid POST request
 // 6 respond with 404 if a bad URI is requested
 
-console.log(process.env);
+//console.log(process.env);
 
 // 1 set up the view engine
 app.set('views', path.resolve(__dirname, 'views')) // path to views
