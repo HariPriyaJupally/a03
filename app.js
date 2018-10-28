@@ -46,7 +46,7 @@ if (process.env.NODE_ENV === 'production') {
 
 // 4 http GET default page at /
 app.get('/index', function (req, res) {
-  //res.sendFile(path.join(__dirname + '/assets/index.html'))
+  res.sendFile(path.join(__dirname + '/assets/index.html'))
   res.render('index.ejs')
 })
 
