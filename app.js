@@ -40,7 +40,7 @@ app.use(logger('combined', { stream: accessLogStream }))
 if (process.env.NODE_ENV === 'production') {
     app.get('*', function (req, res, next) {
     if (req.headers['x-forwarded-proto'] != 'https') {
-      res.redirect('https://rocky-escarpment-96604.herokuapp.com/' + req.url)
+      res.redirect('https://resumesite563.herokuapp.com/' + req.url)
     } else { next() }
   })
 }
@@ -115,7 +115,7 @@ app.get(function (req, res) {
 
 //Listen for an application request on designated port
 app.listen(process.env.PORT||8081, function() {
-console.log('web app started and listening on http://localhost:8081')
+console.log('web app started and listening on http://localhost:8081/')
 })
 
 
