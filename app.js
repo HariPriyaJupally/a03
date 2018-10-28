@@ -5,6 +5,7 @@ const bodyParser = require('body-parser') // simplifies access to request body
 const app = express()  // make express app
 //const port = process.env.PORT || 8081
 const logfile = '/access.log'
+const http = require('http').Server(app)
 
 // Automatic mailing
 const fs = require('fs')
@@ -46,7 +47,7 @@ if (process.env.NODE_ENV === 'production') {
 
 // 4 http GET default page at /
 app.get('/index', function (req, res) {
-  res.sendFile(path.join(__dirname + '/assets/index.html'))
+  //res.sendFile(path.join(__dirname + '/assets/index.html'))
   res.render('index.ejs')
 })
 
