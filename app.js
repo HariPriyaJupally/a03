@@ -3,7 +3,7 @@ const express = require('express')
 const logger = require('morgan')
 const bodyParser = require('body-parser') // simplifies access to request body
 const app = express()  // make express app
-const port = process.env.PORT || 8081
+//const port = process.env.PORT || 8081
 const logfile = '/access.log'
 
 // Automatic mailing
@@ -110,6 +110,11 @@ app.post('/contact', function (req, res) {
 // 6 this will execute for all unknown URIs not specifically handled
 app.get(function (req, res) {
   res.render('404')
+})
+
+//Listen for an application request on designated port
+app.listen(process.env.PORT||8081, function() {
+console.log('web app started and listening on http://localhost:8081')
 })
 
 
